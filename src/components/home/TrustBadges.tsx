@@ -1,9 +1,8 @@
-
 /// <reference lib="dom" />
 /// <reference lib="dom.iterable" />
 
-import React, { useRef, useEffect } from 'react';
-import { Shield, Award, Star, CheckCircle, Clock, Hexagon } from 'lucide-react';
+import React, { useRef, useEffect } from "react";
+import { Shield, Award, Star, CheckCircle, Clock, Hexagon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const badges = [
@@ -13,7 +12,7 @@ const badges = [
     description: "Enterprise-grade security protocols",
     color: "text-accent-purple",
     bgGradient: "from-accent-purple/20 to-accent-purple/5",
-    delay: 100
+    delay: 100,
   },
   {
     icon: Award,
@@ -21,7 +20,7 @@ const badges = [
     description: "Industry-leading recognition",
     color: "text-accent-green",
     bgGradient: "from-accent-green/20 to-accent-green/5",
-    delay: 200
+    delay: 200,
   },
   {
     icon: Star,
@@ -29,7 +28,7 @@ const badges = [
     description: "Exceptional client satisfaction",
     color: "text-accent-purple",
     bgGradient: "from-accent-purple/20 to-accent-purple/5",
-    delay: 300
+    delay: 300,
   },
   {
     icon: CheckCircle,
@@ -37,7 +36,7 @@ const badges = [
     description: "Data-driven success metrics",
     color: "text-accent-green",
     bgGradient: "from-accent-green/20 to-accent-green/5",
-    delay: 400
+    delay: 400,
   },
   {
     icon: Clock,
@@ -45,16 +44,31 @@ const badges = [
     description: "Consistent project execution",
     color: "text-accent-purple",
     bgGradient: "from-accent-purple/20 to-accent-purple/5",
-    delay: 500
-  }
+    delay: 500,
+  },
 ];
 
 const clientLogos = [
-  { url: "https://placehold.co/120x60/1F1F1E/FFFFFF?text=BRAND", alt: "Client 1" },
-  { url: "https://placehold.co/120x60/1F1F1E/FFFFFF?text=BRAND", alt: "Client 2" },
-  { url: "https://placehold.co/120x60/1F1F1E/FFFFFF?text=BRAND", alt: "Client 3" },
-  { url: "https://placehold.co/120x60/1F1F1E/FFFFFF?text=BRAND", alt: "Client 4" },
-  { url: "https://placehold.co/120x60/1F1F1E/FFFFFF?text=BRAND", alt: "Client 5" }
+  {
+    url: "https://placehold.co/120x60/1F1F1E/FFFFFF?text=BRAND",
+    alt: "Client 1",
+  },
+  {
+    url: "https://placehold.co/120x60/1F1F1E/FFFFFF?text=BRAND",
+    alt: "Client 2",
+  },
+  {
+    url: "https://placehold.co/120x60/1F1F1E/FFFFFF?text=BRAND",
+    alt: "Client 3",
+  },
+  {
+    url: "https://placehold.co/120x60/1F1F1E/FFFFFF?text=BRAND",
+    alt: "Client 4",
+  },
+  {
+    url: "https://placehold.co/120x60/1F1F1E/FFFFFF?text=BRAND",
+    alt: "Client 5",
+  },
 ];
 
 const TrustBadges = () => {
@@ -66,14 +80,14 @@ const TrustBadges = () => {
       (entries: IntersectionObserverEntry[]) => {
         const [entry] = entries;
         if (entry?.isIntersecting) {
-          entry.target.classList.add('animate-fade-in');
+          entry.target.classList.add("animate-fade-in");
           badges.forEach((_, index) => {
             const badge = document.getElementById(`badge-${index}`);
             if (badge) {
               setTimeout(() => {
-                badge.classList.add('animate-slide-up', 'opacity-100');
-                badge.classList.remove('translate-y-4', 'opacity-0');
-              }, 200 + (index * 100));
+                badge.classList.add("animate-slide-up", "opacity-100");
+                badge.classList.remove("translate-y-4", "opacity-0");
+              }, 200 + index * 100);
             }
           });
         }
@@ -87,11 +101,14 @@ const TrustBadges = () => {
 
     // Animate background hexagons
     const animateHexagons = () => {
-      const hexagons = document.querySelectorAll<HTMLElement>('.floating-hexagon');
+      const hexagons =
+        document.querySelectorAll<HTMLElement>(".floating-hexagon");
       hexagons.forEach((hex: HTMLElement) => {
         const x = Math.random() * 100 - 50;
         const y = Math.random() * 100 - 50;
-        hex.style.transform = `translate(${x}px, ${y}px) rotate(${Math.random() * 360}deg)`;
+        hex.style.transform = `translate(${x}px, ${y}px) rotate(${
+          Math.random() * 360
+        }deg)`;
       });
     };
 
@@ -103,19 +120,21 @@ const TrustBadges = () => {
   }, []);
 
   // Get window width for responsive hexagons
-  const [windowWidth, setWindowWidth] = React.useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
+  const [windowWidth, setWindowWidth] = React.useState(
+    typeof window !== "undefined" ? window.innerWidth : 1024
+  );
 
   React.useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (typeof window === "undefined") return;
 
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
-  
+
   return (
     <section className="py-12 sm:py-16 md:py-20 bg-secondary/50 relative overflow-hidden">
       {/* Animated Background Elements */}
@@ -133,7 +152,7 @@ const TrustBadges = () => {
               left: `${Math.random() * 100}%`,
             }}
           >
-            <Hexagon 
+            <Hexagon
               className={cn(
                 "w-12 h-12 sm:w-16 sm:h-16 opacity-5",
                 i % 2 === 0 ? "text-accent-purple" : "text-accent-green"
@@ -142,19 +161,24 @@ const TrustBadges = () => {
           </div>
         ))}
       </div>
-        
+
       <div ref={badgesRef} className="container mx-auto px-4 sm:px-6">
         <div className="flex flex-col items-center mb-12 sm:mb-16 relative">
           <div className="inline-block px-3 sm:px-4 py-1 bg-accent-purple/10 text-accent-purple rounded-full text-xs sm:text-sm font-medium mb-3 sm:mb-4 relative">
             <span className="relative z-10">Our Reputation</span>
             <div className="absolute inset-0 bg-gradient-to-r from-accent-purple/20 to-accent-green/20 rounded-full animate-pulse" />
           </div>
-          
+
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-center relative px-4">
             Trusted By Leading{" "}
             <span className="relative inline-block">
               <span className="text-gradient-purple">Brands</span>
-              <svg className="absolute -bottom-1 sm:-bottom-2 left-0 w-full" height="6" viewBox="0 0 100 6" preserveAspectRatio="none">
+              <svg
+                className="absolute -bottom-1 sm:-bottom-2 left-0 w-full"
+                height="6"
+                viewBox="0 0 100 6"
+                preserveAspectRatio="none"
+              >
                 <path
                   d="M0,5 Q25,0 50,5 T100,5"
                   fill="none"
@@ -163,7 +187,13 @@ const TrustBadges = () => {
                   className="animate-draw-line"
                 />
                 <defs>
-                  <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <linearGradient
+                    id="gradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="0%"
+                  >
                     <stop offset="0%" stopColor="rgb(var(--accent-purple))" />
                     <stop offset="100%" stopColor="rgb(var(--accent-green))" />
                   </linearGradient>
@@ -171,15 +201,19 @@ const TrustBadges = () => {
               </svg>
             </span>
           </h2>
-          
+
           <p className="text-sm sm:text-base text-muted-foreground text-center max-w-2xl px-4">
-            Delivering exceptional results and building lasting partnerships through
-            <span className="text-gradient-purple font-medium"> innovation </span>
+            Delivering exceptional results and building lasting partnerships
+            through
+            <span className="text-gradient-purple font-medium">
+              {" "}
+              innovation{" "}
+            </span>
             and
             <span className="text-gradient-green font-medium"> excellence</span>
           </p>
         </div>
-          
+
         {/* Adjusted grid for better mobile layout */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 px-2 sm:px-0">
           {badges.map((badge, index) => {
@@ -198,24 +232,32 @@ const TrustBadges = () => {
                   "relative overflow-hidden"
                 )}
               >
-                <div className={cn(
-                  "absolute inset-0 bg-gradient-to-br",
-                  badge.bgGradient,
-                  "opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                )} />
-                
-                <div className={cn(
-                  "relative mb-3 sm:mb-4 p-2 sm:p-3 rounded-lg",
-                  "bg-gradient-to-br from-background to-accent-purple/10",
-                  "group-hover:scale-110 transition-transform duration-500"
-                )}>
-                  <Icon className={cn(
-                    badge.color,
-                    "w-6 h-6 sm:w-8 sm:h-8 transform group-hover:rotate-12 transition-transform duration-500"
-                  )} />
+                <div
+                  className={cn(
+                    "absolute inset-0 bg-gradient-to-br",
+                    badge.bgGradient,
+                    "opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  )}
+                />
+
+                <div
+                  className={cn(
+                    "relative mb-3 sm:mb-4 p-2 sm:p-3 rounded-lg",
+                    "bg-gradient-to-br from-background to-accent-purple/10",
+                    "group-hover:scale-110 transition-transform duration-500"
+                  )}
+                >
+                  <Icon
+                    className={cn(
+                      badge.color,
+                      "w-6 h-6 sm:w-8 sm:h-8 transform group-hover:rotate-12 transition-transform duration-500"
+                    )}
+                  />
                 </div>
-          
-                <h3 className="font-semibold text-sm sm:text-base mb-1 sm:mb-2 relative z-10">{badge.title}</h3>
+
+                <h3 className="font-semibold text-sm sm:text-base mb-1 sm:mb-2 relative z-10">
+                  {badge.title}
+                </h3>
                 <p className="text-xs sm:text-sm text-muted-foreground text-center relative z-10">
                   {badge.description}
                 </p>
@@ -223,9 +265,9 @@ const TrustBadges = () => {
             );
           })}
         </div>
-        
+
         {/* Adjusted client logos section for mobile */}
-        <div className="mt-12 sm:mt-16 md:mt-20 pt-8 sm:pt-12 border-t border-border/50">
+        {/* <div className="mt-12 sm:mt-16 md:mt-20 pt-8 sm:pt-12 border-t border-border/50">
           <div className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center items-center gap-8 sm:gap-12 md:gap-16">
             {clientLogos.map((logo, index) => (
               <div
@@ -241,7 +283,7 @@ const TrustBadges = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
 
       <style>{`

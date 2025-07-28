@@ -1,21 +1,20 @@
-
-import React, { useEffect } from 'react';
-import SEOHead from '@/components/common/SEOHead';
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
-import Hero from '@/components/home/Hero';
-import Services from '@/components/home/Services';
-import Portfolio from '@/components/home/Portfolio';
-import Contact from '@/components/home/Contact';
-import Testimonials from '@/components/home/Testimonials';
-import TrustBadges from '@/components/home/TrustBadges';
-import HowWeWork from '@/components/home/HowWeWork';
-import WhyChooseUs from '@/components/home/WhyChooseUs';
-import Industries from '@/components/home/Industries';
-import FeaturedBlogs from '@/components/home/FeaturedBlogs';
-import FAQ from '@/components/home/FAQ';
-import CTABanner from '@/components/common/CTABanner';
-import LeadCaptureForm from '@/components/common/LeadCaptureForm';
+import React, { useEffect } from "react";
+import SEOHead from "@/components/common/SEOHead";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import Hero from "@/components/home/Hero";
+import Services from "@/components/home/Services";
+import Portfolio from "@/components/home/Portfolio";
+import Contact from "@/components/home/Contact";
+import Testimonials from "@/components/home/Testimonials";
+import TrustBadges from "@/components/home/TrustBadges";
+import HowWeWork from "@/components/home/HowWeWork";
+import WhyChooseUs from "@/components/home/WhyChooseUs";
+import Industries from "@/components/home/Industries";
+import FeaturedBlogs from "@/components/home/FeaturedBlogs";
+import FAQ from "@/components/home/FAQ";
+import CTABanner from "@/components/common/CTABanner";
+import LeadCaptureForm from "@/components/common/LeadCaptureForm";
 
 const Index = () => {
   useEffect(() => {
@@ -25,62 +24,63 @@ const Index = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "NexaVision",
-    "description": "Creative agency specializing in UI/UX design, branding, web development, motion graphics, and digital marketing",
-    "url": "https://nexavision.com",
-    "logo": "https://nexavision.com/",
-    "sameAs": [
+    name: "NexaVision",
+    description:
+      "Creative agency specializing in UI/UX design, branding, web development, motion graphics, and digital marketing",
+    url: "https://nexavision.com",
+    logo: "https://nexavision.com/",
+    sameAs: [
       "https://twitter.com/nexavision",
-      "https://www.linkedin.com/company/nexavision"
+      "https://www.linkedin.com/company/nexavision",
     ],
-    "priceRange": "$$",
-    "openingHours": "Mo,Tu,We,Th,Fr 09:00-17:00",
-    "telephone": "+1-800-555-0123",
-    "address": {
+    priceRange: "$$",
+    openingHours: "Mo,Tu,We,Th,Fr 09:00-17:00",
+    telephone: "+1-800-555-0123",
+    address: {
       "@type": "PostalAddress",
-      "streetAddress": "123 Design Avenue",
-      "addressLocality": "San Francisco",
-      "addressRegion": "CA",
-      "postalCode": "94103",
-      "addressCountry": "US"
+      streetAddress: "123 Design Avenue",
+      addressLocality: "San Francisco",
+      addressRegion: "CA",
+      postalCode: "94103",
+      addressCountry: "US",
     },
-    "makesOffer": [
+    makesOffer: [
       {
         "@type": "Offer",
-        "itemOffered": {
+        itemOffered: {
           "@type": "Service",
-          "name": "UI/UX Design"
-        }
+          name: "UI/UX Design",
+        },
       },
       {
         "@type": "Offer",
-        "itemOffered": {
+        itemOffered: {
           "@type": "Service",
-          "name": "Web Development"
-        }
+          name: "Web Development",
+        },
       },
       {
         "@type": "Offer",
-        "itemOffered": {
+        itemOffered: {
           "@type": "Service",
-          "name": "Brand Strategy"
-        }
+          name: "Brand Strategy",
+        },
       },
       {
         "@type": "Offer",
-        "itemOffered": {
+        itemOffered: {
           "@type": "Service",
-          "name": "Digital Marketing"
-        }
+          name: "Digital Marketing",
+        },
       },
       {
         "@type": "Offer",
-        "itemOffered": {
+        itemOffered: {
           "@type": "Service",
-          "name": "Motion Graphics"
-        }
-      }
-    ]
+          name: "Motion Graphics",
+        },
+      },
+    ],
   };
 
   return (
@@ -99,25 +99,25 @@ const Index = () => {
         <TrustBadges />
         <Services />
         <WhyChooseUs />
-        
+
         {/* Enhanced Mid-page CTA */}
-        <CTABanner 
+        <CTABanner
           variant="gradient"
           title="Ready to Transform Your Digital Presence?"
           description="Join 250+ businesses that achieved 300% growth with our proven digital strategies"
           primaryButtonText="Get Free Digital Audit"
           secondaryButtonText="View Success Stories"
         />
-        
+
         <HowWeWork />
         <Portfolio />
         <Industries />
-        
+
         {/* Strategic Lead Capture */}
         <section className="py-20 bg-gradient-to-r from-accent-purple/5 to-accent-green/5">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <LeadCaptureForm 
+              <LeadCaptureForm
                 title="Ready to Start Your Digital Transformation?"
                 subtitle="Get a personalized strategy session and discover how we can accelerate your business growth"
                 buttonText="Book Free Strategy Call"
@@ -126,9 +126,9 @@ const Index = () => {
             </div>
           </div>
         </section>
-        
+
         <Testimonials />
-        
+
         {/* FAQ and Lead Capture Side by Side */}
         <section className="py-20">
           <div className="container mx-auto px-4">
@@ -138,7 +138,7 @@ const Index = () => {
               </div>
               <div className="lg:col-span-1">
                 <div className="sticky top-8">
-                  <LeadCaptureForm 
+                  <LeadCaptureForm
                     title="Still Have Questions?"
                     subtitle="Get expert answers tailored to your needs"
                     buttonText="Talk to Expert"
@@ -149,18 +149,18 @@ const Index = () => {
             </div>
           </div>
         </section>
-        
+
         <FeaturedBlogs />
-        
+
         {/* Final CTA with urgency */}
-        <CTABanner 
+        <CTABanner
           variant="minimal"
           title="Don't Let Your Competition Get Ahead"
           description="Schedule your free consultation today and get a custom digital roadmap worth $2,500"
           primaryButtonText="Claim Free Consultation"
           secondaryButtonText="Download Case Studies"
         />
-        
+
         <Contact />
       </main>
       <Footer />
