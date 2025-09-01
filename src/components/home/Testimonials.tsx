@@ -33,8 +33,7 @@ const testimonials: Testimonial[] = [
     company: "SNAPDEEK TECHNOLOGIES PRIVATE LIMITED",
     content:
       "Working with NexaVision was the best decision we made for our rebranding. Their strategic approach to design and development helped us stand out in a competitive market. Our digital presence has never been stronger.",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80",
+    image: "/personImg.jpg",
     stars: 5,
     location: "Chennai, TN",
   },
@@ -45,8 +44,7 @@ const testimonials: Testimonial[] = [
     company: "Numer8",
     content:
       "The motion graphics NexaVision created for our product launch exceeded our expectations. The team's creativity and attention to detail resulted in a campaign that went viral and increased our product awareness by 200%.",
-    image:
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80",
+    image: "/personImg.jpg",
     stars: 5,
     location: "Mumbai, MH",
   },
